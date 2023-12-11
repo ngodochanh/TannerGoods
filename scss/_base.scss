@@ -1,0 +1,126 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  max-width: 1900px;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: $primary-font;
+}
+
+main {
+  padding: 0 15px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0 auto;
+}
+
+.second-font {
+  font-family: $secondary-font;
+  font-weight: 100;
+  font-size: 15px;
+  line-height: lineH(22.5, 15);
+}
+
+.active {
+  display: block !important;
+}
+
+.item-active {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+
+  a {
+    color: black;
+  }
+
+  &::before {
+    display: block;
+    content: '';
+    width: 39px;
+    height: 1.5px;
+    background: $brown;
+    margin-right: 10px;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    width: 4.5px;
+    height: 4.5px;
+    background: $brown;
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+}
+
+.title {
+  font-size: 41.5px;
+  font-weight: bold;
+  letter-spacing: 6.6px;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.desc {
+  font-size: 14.5px;
+  line-height: lineH(39.5, 14.5);
+  color: $gray-light;
+  font-weight: 400;
+}
+
+a {
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+@include minw(1000px) {
+  .title {
+    font-size: 43.5px;
+  }
+
+  .active {
+    display: flex !important;
+  }
+}
+
+@include minw(1300px) {
+  .title {
+    font-size: 48.5px;
+  }
+
+  .caption {
+    font-size: 21.5px;
+  }
+}
+
+@include minw(1900px) {
+  main {
+    padding: 0px;
+  }
+
+  .title {
+    letter-spacing: 12.6px;
+  }
+}

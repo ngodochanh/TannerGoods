@@ -1,0 +1,50 @@
+@mixin minw($breakpoint) {
+  @media screen and (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin line($position: true, $h, $w, $dx: top, $dy: left, $dxn: 0, $dyn: 0, $mb: 0, $mr: 0, $ml: 0) {
+  & {
+    @if $position {
+      position: relative;
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: $w;
+    height: $h;
+    background-color: $gray-light-fourth;
+    @if $position {
+      position: absolute;
+      z-index: 2;
+
+      @if $dx == top {
+        top: $dxn;
+      } @else if $dx == bottom {
+        bottom: $dxn;
+      }
+
+      @if $dy == left {
+        left: $dyn;
+      } @else if $dy == right {
+        right: $dyn;
+      }
+    } @else {
+
+      @if $mb != 0 {
+        margin-bottom: $mb;
+      }
+    
+      @if $mr != 0 {
+        margin-right: $mr;
+      }
+
+      @if $ml != 0 {
+        margin-left: $ml;
+      }
+    }
+  }
+}

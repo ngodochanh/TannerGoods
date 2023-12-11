@@ -1,0 +1,276 @@
+.voyager {
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  &__frame {
+    grid-row: 1;
+    z-index: 1;
+
+    grid-column: 1 / 13;
+    width: 100%;
+  }
+
+  &__content {
+    z-index: 2;
+    grid-row: 2;
+    grid-column: 1 / 13;
+    margin-top: 25px;
+
+    &--box {
+      grid-row: 1;
+
+      width: 100%;
+      z-index: 2;
+
+      grid-column: 1 / 13;
+      margin-bottom: 25px;
+
+      &-title {
+        text-align: center;
+        margin-bottom: 16px;
+        text-shadow: 0px 0px 26px rgba($color: #000f1a, $alpha: 0.6);
+      }
+
+      &-caption {
+        text-align: right;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+      }
+    }
+
+    &--desc {
+      grid-row: 2;
+      place-self: center;
+      grid-column: 1 / 13;
+    }
+  }
+
+  &__border {
+    grid-column: 4 / 13;
+    grid-row: 1;
+
+    position: relative;
+    width: 100%;
+
+    &::before {
+      display: none;
+      content: '';
+      border: 3px solid $brown;
+      height: 300px;
+      margin-left: auto;
+
+      width: 100%;
+    }
+
+    &--icon {
+      margin-left: auto;
+      margin-right: 22.6%;
+      display: none;
+      z-index: 2;
+      transform: translateY(-1.5px);
+      position: relative;
+
+      img {
+        height: 79px;
+        margin-left: auto;
+        margin-right: auto;
+        z-index: 2;
+      }
+
+      &::after {
+        content: '';
+        width: 196px;
+        height: 8px;
+        background-color: white;
+        position: absolute;
+        right: 0;
+        top: -2px;
+        transform: translateX(32%);
+        display: block;
+        z-index: -1;
+      }
+    }
+  }
+
+  @include minw(640px) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    &__content {
+      margin-top: 100px;
+
+      &--box {
+        grid-column: 1 / 8;
+        margin-bottom: 0px;
+        place-self: center start;
+
+        &-title {
+          margin-right: 4%;
+          margin-bottom: 10px;
+        }
+
+        &-caption {
+          margin-right: 4%;
+          display: block;
+        }
+      }
+
+      &--desc {
+        grid-row: 1;
+        grid-column: 8 / 13;
+        margin-right: 2%;
+        text-align: left;
+      }
+    }
+
+    &__border {
+      &::before {
+        display: block;
+        height: 314px;
+      }
+    }
+  }
+
+  @include minw(1000px) {
+    &__content {
+      &--box {
+        &-title {
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  @include minw(1300px) {
+    padding-top: 197.5px;
+    padding-bottom: 196px;
+
+    &__frame {
+      grid-column: 1 / 10;
+      width: 89.8%;
+    }
+
+    &__content {
+      grid-row: 1;
+      grid-column: 3 / 13;
+      margin-top: 3.1%;
+      place-self: center;
+
+
+      &--box {
+        grid-column: 1 / 9;
+        width: 92%;
+        margin-bottom: 11%;
+        text-align: right;
+
+        &-title {
+          color: white;
+          margin-right: 6%;
+        }
+
+        &-caption {
+          color: white;
+        }
+      }
+
+      &--desc {
+        margin-left: 12%;
+        margin-right: 4%;
+        margin-bottom: 12%;
+      }
+    }
+
+    &__border {
+      &::before {
+        width: 93%;
+      }
+
+      &--icon {
+        display: block;
+        width: 7%;
+        img {
+          height: 59px;
+        }
+
+        &::after {
+          content: '';
+          right: 0;
+          top: -3px;
+          transform: translateX(32%);
+        }
+      }
+    }
+  }
+
+  @include minw(1600px) {
+    &__content {
+      grid-column: 4 / 12;
+      margin-top: 7%;
+
+      &--box {
+        margin-bottom: 12%;
+        margin-right: 4%;
+        place-self: center;
+
+        &-title {
+          margin-right: 2%;
+        }
+
+        &-caption {
+          margin-right: 0%;
+        }
+      }
+
+      &--desc {
+        margin-right: 0%;
+        grid-column: 9/12;
+        margin-bottom: 28%;
+
+        margin-left: 0%;
+      }
+    }
+
+    &__border {
+      &::before {
+        height: 321px;
+      }
+
+      &::after {
+        top: 322px - 5px;
+      }
+
+      img {
+        height: 69px;
+      }
+    }
+  }
+
+  @include minw(1900px) {
+    &__content {
+      margin-top: 3.2%;
+
+      &--box {
+        margin-bottom: 12.7%;
+
+        &-title {
+          text-align: right;
+        }
+      }
+
+      &--desc {
+        margin-bottom: 15%;
+      }
+    }
+
+    &__border {
+      &--icon {
+        display: block;
+        width: 7%;
+
+        img {
+          height: 79px;
+        }
+      }
+    }
+  }
+}
